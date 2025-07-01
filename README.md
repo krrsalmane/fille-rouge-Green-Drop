@@ -14,7 +14,7 @@ greendrop/
 │   │   │   │   ├── repository/       # JPA repositories
 │   │   │   │   ├── service/         # Business logic
 │   │   │   │   ├── dto/             # Data Transfer Objects
-│   │   │   │   ├── exception/       # Custom exceptions
+│   │   │   │        
 │   │   │   │   └── security/        # Security related classes
 │   │   │   └── resources/
 │   │   │       └── application.properties
