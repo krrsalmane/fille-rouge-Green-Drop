@@ -1,4 +1,13 @@
 package com.greendrop.model;
 
-public class Administrator extends User  {
+
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class Administrator extends User {
+
+    public Administrator() {
+        super();
+    }
 }
