@@ -6,7 +6,7 @@ public class AuthRequestDTO {
     private String email;
     private String password;
 
-    // Constructors
+
     public AuthRequestDTO() {
     }
 
@@ -15,7 +15,7 @@ public class AuthRequestDTO {
         this.password = password;
     }
 
-    // Getters and Setters
+
     public String getEmail() {
         return email;
     }

@@ -1,10 +1,9 @@
 package com.greendrop.dto;
-
-
-
-
 import com.greendrop.model.ChampStatus;
 import com.greendrop.model.SoilType;
+
+
+
 
 public class ChampDTO {
     private Long id;
@@ -15,11 +14,11 @@ public class ChampDTO {
     private Long agriculteurId;
     private Long cultureId;
 
-    // Constructors
+
     public ChampDTO() {
     }
 
-    // Getters and Setters
+
     public Long getId() {
         return id;
     }

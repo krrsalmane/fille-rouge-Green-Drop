@@ -8,11 +8,11 @@ public class CultureDTO {
     private Float besoinsEnEau;
     private String saison;
 
-    // Constructors
+
     public CultureDTO() {
     }
 
-    // Getters and Setters
+
     public Long getId() {
         return id;
     }
