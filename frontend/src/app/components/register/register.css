@@ -1,0 +1,9 @@
+/*
+  This file uses the same background style as the login page.
+  You can create a shared CSS file in your project to avoid repetition.
+*/
+.page-background {
+  background-image: url('https://images.pexels.com/photos/247599/pexels-photo-247599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+  background-size: cover;
+  background-position: center;
+}

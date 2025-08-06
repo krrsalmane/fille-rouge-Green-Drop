@@ -1,15 +1,17 @@
 package com.greendrop.service;
-
-
-
+import com.greendrop.dto.AuthRequestDTO;
+import com.greendrop.dto.AuthResponseDTO;
 import com.greendrop.dto.RegisterRequestDTO;
-import com.greendrop.model.Administrator;
+import com.greendrop.model.User;
 import com.greendrop.model.Agriculteur;
 import com.greendrop.model.Role;
-import com.greendrop.repository.AdministratorRepository;
-import com.greendrop.repository.AgriculteurRepository;
 import com.greendrop.repository.UserRepository;
+import com.greendrop.service.JwtService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -17,44 +19,57 @@ import org.springframework.stereotype.Service;
 public class AuthService {
 
     @Autowired
-    private UserRepository userRepository;
-
+    private UserRepository utilisateurRepository;
     @Autowired
-    private AdministratorRepository administratorRepository;
-
+    private PasswordEncoder passwordEncoder;
     @Autowired
-    private AgriculteurRepository agriculteurRepository;
-
+    private JwtService jwtService;
     @Autowired
-    private PasswordEncoder passwordEncoder; // Spring Security's password hasher
+    private AuthenticationManager authenticationManager;
 
-    public void register(RegisterRequestDTO registerRequest) {
-        // 1. Check if email already exists
-        if (userRepository.findByEmail(registerRequest.getEmail()).isPresent()) {
+    // Registration Logic (no changes)
+    public void register(RegisterRequestDTO request) {
+        if (utilisateurRepository.findByEmail(request.getEmail()).isPresent()) {
             throw new IllegalStateException("Email already in use");
         }
 
-        // 2. Hash the password
-        String hashedPassword = passwordEncoder.encode(registerRequest.getPassword());
+        String hashedPassword = passwordEncoder.encode(request.getPassword());
 
-        // 3. Create user based on role
-        if (registerRequest.getRole() == Role.ADMIN) {
-            Administrator admin = new Administrator();
-            admin.setNom(registerRequest.getNom());
-            admin.setPrenom(registerRequest.getPrenom());
-            admin.setEmail(registerRequest.getEmail());
-            admin.setPassword(hashedPassword);
-            administratorRepository.save(admin);
-        } else if (registerRequest.getRole() == Role.AGRICULTEUR) {
-            Agriculteur agriculteur = new Agriculteur();
-            agriculteur.setNom(registerRequest.getNom());
-            agriculteur.setPrenom(registerRequest.getPrenom());
-            agriculteur.setEmail(registerRequest.getEmail());
-            agriculteur.setPassword(hashedPassword);
-            agriculteur.setTelephone(registerRequest.getTelephone());
-            agriculteurRepository.save(agriculteur);
+        if (request.getRole() == Role.ADMIN) {
+            User user = new User();
+            user.setNom(request.getNom());
+            user.setPrenom(request.getPrenom());
+            user.setEmail(request.getEmail());
+            user.setPassword(hashedPassword);
+            user.setRole(Role.ADMIN);
+            utilisateurRepository.save(user);
         } else {
-            throw new IllegalArgumentException("Invalid role specified");
+            Agriculteur user = new Agriculteur();
+            user.setNom(request.getNom());
+            user.setPrenom(request.getPrenom());
+            user.setEmail(request.getEmail());
+            user.setPassword(hashedPassword);
+            user.setTelephone(request.getTelephone());
+            user.setRole(Role.AGRICULTEUR);
+            utilisateurRepository.save(user);
         }
+    }
+
+    // Simplified Login Logic
+    public AuthResponseDTO login(AuthRequestDTO request) {
+        // 1. Check if the user exists and the password is correct
+        authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        request.getEmail(),
+                        request.getPassword()
+                )
+        );
+
+        // 2. If successful, find the user and generate a token
+        UserDetails user = utilisateurRepository.findByEmail(request.getEmail()).orElseThrow();
+        String token = jwtService.generateToken(user.getUsername());
+
+        // 3. Return the token
+        return new AuthResponseDTO(token);
     }
 }
