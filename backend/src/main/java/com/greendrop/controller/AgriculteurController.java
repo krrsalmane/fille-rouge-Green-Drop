@@ -22,4 +22,10 @@ public class AgriculteurController {
         return ResponseEntity.ok(agriculteurs);
     }
 
-}
+    @GetMapping("/{id}")
+    public ResponseEntity<AgriculteurDTO> getAgriculteurById(@PathVariable Long id) {
+        return agriculteurService.getAgriculteurById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
