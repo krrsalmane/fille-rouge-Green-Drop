@@ -6,7 +6,7 @@ public class UserDTO {
     private String nom;
     private String prenom;
     private String email;
-    private String telephone; // Specific to Agriculteur but can be here for simplicity
+
 
     // Constructors
     public UserDTO() {
@@ -45,11 +45,4 @@ public class UserDTO {
         this.email = email;
     }
 
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
 }
