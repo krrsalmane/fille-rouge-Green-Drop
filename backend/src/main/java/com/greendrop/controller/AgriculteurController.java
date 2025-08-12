@@ -29,3 +29,10 @@ public class AgriculteurController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @PostMapping
+    public ResponseEntity<AgriculteurDTO> createAgriculteur(@RequestBody AgriculteurDTO agriculteurDTO) {
+        AgriculteurDTO createdAgriculteur = agriculteurService.createAgriculteur(agriculteurDTO);
+        return new ResponseEntity<>(createdAgriculteur, HttpStatus.CREATED);
+    }
+
+}
