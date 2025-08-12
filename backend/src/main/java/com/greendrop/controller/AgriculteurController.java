@@ -42,4 +42,11 @@ public class AgriculteurController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteAgriculteur(@PathVariable Long id) {
+        if (agriculteurService.deleteAgriculteur(id)) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.notFound().build();
+    }
 }
