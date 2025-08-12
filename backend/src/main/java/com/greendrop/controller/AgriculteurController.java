@@ -35,4 +35,11 @@ public class AgriculteurController {
         return new ResponseEntity<>(createdAgriculteur, HttpStatus.CREATED);
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<AgriculteurDTO> updateAgriculteur(@PathVariable Long id, @RequestBody AgriculteurDTO agriculteurDTO) {
+        return agriculteurService.updateAgriculteur(id, agriculteurDTO)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
 }
