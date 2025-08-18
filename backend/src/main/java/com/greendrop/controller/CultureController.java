@@ -35,7 +35,12 @@ public class CultureController {
         return new ResponseEntity<>(createdCulture, HttpStatus.CREATED);
     }
 
-
+    @PutMapping("/{id}")
+    public ResponseEntity<CultureDTO> updateCulture(@PathVariable Long id, @RequestBody CultureDTO cultureDTO) {
+        return cultureService.updateCulture(id, cultureDTO)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteCulture(@PathVariable Long id) {
