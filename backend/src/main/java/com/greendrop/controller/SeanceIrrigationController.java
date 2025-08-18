@@ -16,6 +16,12 @@ public class SeanceIrrigationController {
     @Autowired
     private SeanceIrrigationService seanceIrrigationService;
 
+    @GetMapping
+    public ResponseEntity<List<SeanceIrrigationDTO>> getAllSeanceIrrigations() {
+        List<SeanceIrrigationDTO> seanceIrrigations = seanceIrrigationService.getAllSeanceIrrigations();
+        return ResponseEntity.ok(seanceIrrigations);
+    }
+
 
 
     @PostMapping("/add")
