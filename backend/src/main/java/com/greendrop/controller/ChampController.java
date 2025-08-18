@@ -22,7 +22,12 @@ public class ChampController {
         return ResponseEntity.ok(champs);
     }
 
-
+    @GetMapping("/{id}")
+    public ResponseEntity<ChampDTO> getChampById(@PathVariable Long id) {
+        return champService.getChampById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
 
     @PostMapping("/add")
     public ResponseEntity<ChampDTO> createChamp(@RequestBody ChampDTO champDTO) {
