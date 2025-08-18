@@ -22,7 +22,12 @@ public class SeanceIrrigationController {
         return ResponseEntity.ok(seanceIrrigations);
     }
 
-
+    @GetMapping("/{id}")
+    public ResponseEntity<SeanceIrrigationDTO> getSeanceIrrigationById(@PathVariable Long id) {
+        return seanceIrrigationService.getSeanceIrrigationById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
 
     @PostMapping("/add")
     public ResponseEntity<SeanceIrrigationDTO> createSeanceIrrigation(@RequestBody SeanceIrrigationDTO seanceIrrigationDTO) {
