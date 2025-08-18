@@ -1,5 +1,7 @@
 package com.greendrop.mapper;
 
+import com.greendrop.model.Champ;
+import com.greendrop.repository.ChampRepository;
 import org.mapstruct.Named;
 import com.greendrop.model.Agriculteur;
 import com.greendrop.model.Culture;
@@ -15,6 +17,8 @@ public class EntityMappingResolver {
     private AgriculteurRepository agriculteurRepository;
     @Autowired
     private CultureRepository cultureRepository;
+    @Autowired
+    private ChampRepository champRepository;
 
     @Named("mapAgriculteur")
     public Agriculteur mapAgriculteur(Long agriculteurId) {
@@ -24,5 +28,10 @@ public class EntityMappingResolver {
     @Named("mapCulture")
     public Culture mapCulture(Long cultureId) {
         return cultureRepository.findById(cultureId).orElse(null);
+    }
+
+    @Named("mapChamp")
+    public Champ mapChamp(Long champId) {
+        return champRepository.findById(champId).orElse(null);
     }
 }
