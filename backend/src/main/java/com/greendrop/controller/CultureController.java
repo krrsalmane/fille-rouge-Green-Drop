@@ -16,6 +16,12 @@ public class CultureController {
     @Autowired
     private CultureService cultureService;
 
+    @GetMapping
+    public ResponseEntity<List<CultureDTO>> getAllCultures() {
+        List<CultureDTO> cultures = cultureService.getAllCultures();
+        return ResponseEntity.ok(cultures);
+    }
+
 
 
     @PostMapping("/add")
