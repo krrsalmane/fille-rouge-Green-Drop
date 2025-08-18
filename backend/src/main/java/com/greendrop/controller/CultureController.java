@@ -36,4 +36,12 @@ public class CultureController {
     }
 
 
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteCulture(@PathVariable Long id) {
+        if (cultureService.deleteCulture(id)) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.notFound().build();
+    }
 }
