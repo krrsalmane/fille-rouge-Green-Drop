@@ -42,5 +42,11 @@ public class SeanceIrrigationController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteSeanceIrrigation(@PathVariable Long id) {
+        if (seanceIrrigationService.deleteSeanceIrrigation(id)) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.notFound().build();
+    }
 }
