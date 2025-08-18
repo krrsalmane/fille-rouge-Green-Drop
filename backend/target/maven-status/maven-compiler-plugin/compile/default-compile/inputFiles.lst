@@ -1,4 +1,5 @@
 C:\Users\krr.salmane\OneDrive\Documents\New folder\Desktop\Fill Rouge\backend\src\main\java\com\greendrop\service\JwtService.java
+C:\Users\krr.salmane\OneDrive\Documents\New folder\Desktop\Fill Rouge\backend\src\main\java\com\greendrop\mapper\CultureMapper.java
 C:\Users\krr.salmane\OneDrive\Documents\New folder\Desktop\Fill Rouge\backend\src\main\java\com\greendrop\config\SecurityConfig.java
 C:\Users\krr.salmane\OneDrive\Documents\New folder\Desktop\Fill Rouge\backend\src\main\java\com\greendrop\service\SeanceIrrigationService.java
 C:\Users\krr.salmane\OneDrive\Documents\New folder\Desktop\Fill Rouge\backend\src\main\java\com\greendrop\dto\AgriculteurDTO.java
@@ -9,6 +10,7 @@ C:\Users\krr.salmane\OneDrive\Documents\New folder\Desktop\Fill Rouge\backend\sr
 C:\Users\krr.salmane\OneDrive\Documents\New folder\Desktop\Fill Rouge\backend\src\main\java\com\greendrop\controller\UserController.java
 C:\Users\krr.salmane\OneDrive\Documents\New folder\Desktop\Fill Rouge\backend\src\main\java\com\greendrop\model\Champ.java
 C:\Users\krr.salmane\OneDrive\Documents\New folder\Desktop\Fill Rouge\backend\src\main\java\com\greendrop\repository\CultureRepository.java
+C:\Users\krr.salmane\OneDrive\Documents\New folder\Desktop\Fill Rouge\backend\src\main\java\com\greendrop\mapper\EntityMappingResolver.java
 C:\Users\krr.salmane\OneDrive\Documents\New folder\Desktop\Fill Rouge\backend\src\main\java\com\greendrop\controller\CultureController.java
 C:\Users\krr.salmane\OneDrive\Documents\New folder\Desktop\Fill Rouge\backend\src\main\java\com\greendrop\model\Role.java
 C:\Users\krr.salmane\OneDrive\Documents\New folder\Desktop\Fill Rouge\backend\src\main\java\com\greendrop\dto\UserDTO.java
@@ -27,6 +29,7 @@ C:\Users\krr.salmane\OneDrive\Documents\New folder\Desktop\Fill Rouge\backend\sr
 C:\Users\krr.salmane\OneDrive\Documents\New folder\Desktop\Fill Rouge\backend\src\main\java\com\greendrop\dto\StatutDTO.java
 C:\Users\krr.salmane\OneDrive\Documents\New folder\Desktop\Fill Rouge\backend\src\main\java\com\greendrop\service\AgriculteurService.java
 C:\Users\krr.salmane\OneDrive\Documents\New folder\Desktop\Fill Rouge\backend\src\main\java\com\greendrop\controller\AuthController.java
+C:\Users\krr.salmane\OneDrive\Documents\New folder\Desktop\Fill Rouge\backend\src\main\java\com\greendrop\mapper\ChampMapper.java
 C:\Users\krr.salmane\OneDrive\Documents\New folder\Desktop\Fill Rouge\backend\src\main\java\com\greendrop\controller\AgriculteurController.java
 C:\Users\krr.salmane\OneDrive\Documents\New folder\Desktop\Fill Rouge\backend\src\main\java\com\greendrop\model\SeanceIrrigation.java
 C:\Users\krr.salmane\OneDrive\Documents\New folder\Desktop\Fill Rouge\backend\src\main\java\com\greendrop\repository\ChampRepository.java

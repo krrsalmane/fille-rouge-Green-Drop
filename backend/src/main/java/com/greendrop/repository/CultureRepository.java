@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface CultureRepository extends JpaRepository<Culture, Integer> {
+public interface CultureRepository extends JpaRepository<Culture, Long> {
 }

@@ -4,6 +4,7 @@ import com.greendrop.config.JwtAuthFilter; // We will create this next
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
@@ -33,7 +34,9 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/**").permitAll() // Allow access to login/register endpoints
                         .requestMatchers("/api/auth/register","api/auth/login").permitAll()
-                        .requestMatchers("/api/agriculteurs/**").permitAll()
+                        .requestMatchers("/api/cultures/**").permitAll()
+                        .requestMatchers(("/api/agriculteur/**")).permitAll()
+                        .requestMatchers("/api/champs/**").permitAll()
                         .anyRequest().authenticated() // All other requests must be authenticated
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // Use stateless sessions

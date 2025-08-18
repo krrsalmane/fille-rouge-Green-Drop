@@ -1,12 +1,17 @@
+com\greendrop\mapper\CultureMapperImpl.class
+com\greendrop\mapper\EntityMappingResolver.class
 com\greendrop\model\SeanceIrrigation.class
 com\greendrop\model\Agriculteur.class
 com\greendrop\controller\AuthController.class
+com\greendrop\mapper\ChampMapperImpl.class
 com\greendrop\repository\SeanceIrrigationRepository.class
+com\greendrop\mapper\CultureMapper.class
 com\greendrop\repository\ChampRepository.class
 com\greendrop\model\Role.class
 com\greendrop\dto\AuthResponseDTO.class
 com\greendrop\repository\UserRepository.class
 com\greendrop\mapper\AgriculteurMapper.class
+com\greendrop\controller\CultureController.class
 com\greendrop\dto\UserDTO.class
 com\greendrop\service\CultureService.class
 com\greendrop\config\SecurityConfig.class
@@ -24,6 +29,7 @@ com\greendrop\controller\AgriculteurController.class
 com\greendrop\dto\SeanceIrrigationDTO.class
 com\greendrop\dto\ChampDTO.class
 com\greendrop\model\User.class
+com\greendrop\controller\ChampController.class
 com\greendrop\repository\AdministratorRepository.class
 com\greendrop\mapper\AgriculteurMapperImpl.class
 com\greendrop\dto\CultureDTO.class
@@ -32,6 +38,7 @@ com\greendrop\model\ChampStatus.class
 com\greendrop\service\UserService.class
 com\greendrop\service\ChampService.class
 com\greendrop\GreenDropApplication.class
+com\greendrop\mapper\ChampMapper.class
 com\greendrop\repository\CultureRepository.class
 com\greendrop\service\AgriculteurService.class
 com\greendrop\service\AuthService.class
