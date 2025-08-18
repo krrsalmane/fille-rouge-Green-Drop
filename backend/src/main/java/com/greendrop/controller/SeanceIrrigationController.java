@@ -35,5 +35,12 @@ public class SeanceIrrigationController {
         return new ResponseEntity<>(createdSeanceIrrigation, HttpStatus.CREATED);
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<SeanceIrrigationDTO> updateSeanceIrrigation(@PathVariable Long id, @RequestBody SeanceIrrigationDTO seanceIrrigationDTO) {
+        return seanceIrrigationService.updateSeanceIrrigation(id, seanceIrrigationDTO)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
 
 }
