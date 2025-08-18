@@ -24,7 +24,12 @@ public class ChampController {
         return new ResponseEntity<>(createdChamp, HttpStatus.CREATED);
     }
 
-
+    @PutMapping("/{id}")
+    public ResponseEntity<ChampDTO> updateChamp(@PathVariable Long id, @RequestBody ChampDTO champDTO) {
+        return champService.updateChamp(id, champDTO)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteChamp(@PathVariable Long id) {
