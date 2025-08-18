@@ -22,7 +22,12 @@ public class CultureController {
         return ResponseEntity.ok(cultures);
     }
 
-
+    @GetMapping("/{id}")
+    public ResponseEntity<CultureDTO> getCultureById(@PathVariable Long id) {
+        return cultureService.getCultureById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
 
     @PostMapping("/add")
     public ResponseEntity<CultureDTO> createCulture(@RequestBody CultureDTO cultureDTO) {
