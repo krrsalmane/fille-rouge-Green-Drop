@@ -16,6 +16,12 @@ public class ChampController {
     @Autowired
     private ChampService champService;
 
+    @GetMapping
+    public ResponseEntity<List<ChampDTO>> getAllChamps() {
+        List<ChampDTO> champs = champService.getAllChamps();
+        return ResponseEntity.ok(champs);
+    }
+
 
 
     @PostMapping("/add")
