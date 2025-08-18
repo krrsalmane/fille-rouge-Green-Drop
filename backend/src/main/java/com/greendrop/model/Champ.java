@@ -55,12 +55,12 @@ public class Champ {
         this.largeur = largeur;
     }
 
-    public SoilType getTypeSoil() {
+    public SoilType getSoilType() {
         return soilType;
     }
 
-    public void setTypeSoil(SoilType typeSoil) {
-        this.soilType = typeSoil;
+    public void setSoilType(SoilType soilType) {
+        this.soilType = soilType;
     }
 
     public ChampStatus getChampStatus() {
