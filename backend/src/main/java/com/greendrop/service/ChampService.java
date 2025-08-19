@@ -52,4 +52,9 @@ public class ChampService {
         }
         return false;
     }
+
+    public Optional<com.greendrop.model.ChampStatus> getChampStatus(Long id) {
+        return champRepository.findById(id)
+                .map(Champ::getChampStatus);
+    }
 }
