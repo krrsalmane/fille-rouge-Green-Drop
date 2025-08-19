@@ -40,6 +40,7 @@ com\greendrop\repository\AgriculteurRepository.class
 com\greendrop\dto\AuthRequestDTO.class
 com\greendrop\dto\StatutDTO.class
 com\greendrop\model\Champ.class
+com\greendrop\controller\StatutController.class
 com\greendrop\controller\ChampController.class
 com\greendrop\service\UserService.class
 com\greendrop\GreenDropApplication.class

@@ -52,4 +52,12 @@ public class CultureService {
         }
         return false;
     }
+
+    public Optional<com.greendrop.model.ChampStatus> getCultureStatus(Long id) {
+        // TODO: Implement actual logic to determine Culture status (Green/Red)
+        // This might involve checking irrigation schedules, last irrigation date, etc.
+        // For now, returning Green as a placeholder.
+        return cultureRepository.findById(id)
+                .map(culture -> com.greendrop.model.ChampStatus.Green); // Placeholder
+    }
 }

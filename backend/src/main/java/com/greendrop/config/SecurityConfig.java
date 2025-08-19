@@ -38,6 +38,7 @@ public class SecurityConfig {
                         .requestMatchers(("/api/agriculteur/**")).permitAll()
                         .requestMatchers("/api/champs/**").permitAll()
                         .requestMatchers("/api/seanceIrrigations/**").permitAll()
+                        .requestMatchers("/api/statuts/**").permitAll()
                         .anyRequest().authenticated() // All other requests must be authenticated
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // Use stateless sessions
