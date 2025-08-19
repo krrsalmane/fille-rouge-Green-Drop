@@ -28,5 +28,13 @@ public class StatutController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-
+    @GetMapping("/culture/{id}")
+    public ResponseEntity<ChampStatus> getCultureStatus(@PathVariable Long id) {
+        // This method will call a service method to determine the culture's status
+        // Assuming Culture also uses ChampStatus for its status representation
+        // If there's a separate CultureStatus enum, this would need adjustment
+        return cultureService.getCultureStatus(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
 }
