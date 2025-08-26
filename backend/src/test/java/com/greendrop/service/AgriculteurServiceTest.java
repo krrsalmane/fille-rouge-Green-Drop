@@ -70,4 +70,18 @@ class AgriculteurServiceTest {
         assertThat(found.get().getNom()).isEqualTo("Sara");
     }
 
+    @Test
+    void testUpdateAgriculteur() {
+        AgriculteurDTO dto = new AgriculteurDTO();
+        dto.setNom("Hassan");
+        dto.setPrenom("Ali");
+        AgriculteurDTO saved = agriculteurService.createAgriculteur(dto);
+
+        dto.setNom("Updated Hassan");
+        Optional<AgriculteurDTO> updated = agriculteurService.updateAgriculteur(saved.getId(), dto);
+
+        assertThat(updated).isPresent();
+        assertThat(updated.get().getNom()).isEqualTo("Updated Hassan");
+    }
+
 }
