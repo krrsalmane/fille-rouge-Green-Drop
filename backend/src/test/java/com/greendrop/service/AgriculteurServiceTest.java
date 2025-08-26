@@ -45,4 +45,16 @@ class AgriculteurServiceTest {
         assertThat(saved.getNom()).isEqualTo("Ali");
     }
 
+    @Test
+    void testGetAllAgriculteurs() {
+        AgriculteurDTO dto = new AgriculteurDTO();
+        dto.setNom("Mohamed");
+        dto.setPrenom("Laaouane");
+        agriculteurService.createAgriculteur(dto);
+
+        List<AgriculteurDTO> list = agriculteurService.getAllAgriculteurs();
+
+        assertThat(list).isNotEmpty();
+    }
+
 }
