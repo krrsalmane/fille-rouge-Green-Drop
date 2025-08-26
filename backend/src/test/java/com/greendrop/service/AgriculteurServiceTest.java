@@ -84,4 +84,16 @@ class AgriculteurServiceTest {
         assertThat(updated.get().getNom()).isEqualTo("Updated Hassan");
     }
 
+    @Test
+    void testDeleteAgriculteur() {
+        AgriculteurDTO dto = new AgriculteurDTO();
+        dto.setNom("Delete Test");
+        dto.setPrenom("X");
+        AgriculteurDTO saved = agriculteurService.createAgriculteur(dto);
+
+        boolean deleted = agriculteurService.deleteAgriculteur(saved.getId());
+
+        assertThat(deleted).isTrue();
+        assertThat(agriculteurRepository.existsById(saved.getId())).isFalse();
+    }
 }
