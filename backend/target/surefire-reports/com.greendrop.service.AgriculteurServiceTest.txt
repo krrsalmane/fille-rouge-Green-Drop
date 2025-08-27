@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.greendrop.service.AgriculteurServiceTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 25.39 s -- in com.greendrop.service.AgriculteurServiceTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 43.76 s -- in com.greendrop.service.AgriculteurServiceTest
