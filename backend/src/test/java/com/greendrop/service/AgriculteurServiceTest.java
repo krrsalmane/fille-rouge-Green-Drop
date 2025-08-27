@@ -1,6 +1,4 @@
 package com.greendrop.service;
-
-
 import com.greendrop.dto.AgriculteurDTO;
 import com.greendrop.model.Agriculteur;
 import com.greendrop.repository.AgriculteurRepository;
@@ -15,8 +13,8 @@ import jakarta.transaction.Transactional;
 
 import java.util.List;
 import java.util.Optional;
-
 import static org.assertj.core.api.Assertions.assertThat;
+
 
 @SpringBootTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.ANY) // use H2 instead of MySQL

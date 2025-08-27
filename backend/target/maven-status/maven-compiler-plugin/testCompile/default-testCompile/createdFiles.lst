@@ -1,1 +1,4 @@
+com\greendrop\service\CultureServiceTest.class
 com\greendrop\service\AgriculteurServiceTest.class
+com\greendrop\service\ChampServiceTest.class
+com\greendrop\service\SeanceIrrigationServiceTest.class
